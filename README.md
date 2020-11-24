@@ -6,6 +6,9 @@ docker-compose up
 ```
 - Go to http://localhost:8080
 
+```bash
+php artisan migrate:refresh
+```
 
 # Development
 ## Useful commands
