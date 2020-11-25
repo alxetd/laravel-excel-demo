@@ -19,6 +19,13 @@ class Task extends Model
         'name',
     ];
 
+    /**
+     * The storage format of the model's date columns.
+     *
+     * @var string
+     */
+    protected $dateFormat = 'Y-m-d H:i:s';
+
     public function users(): BelongsToMany {
         return $this->belongsToMany(User::class);
     }

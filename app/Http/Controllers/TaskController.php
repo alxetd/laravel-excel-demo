@@ -92,8 +92,7 @@ class TaskController extends Controller
     public function update(Request $request, Task $task): RedirectResponse
     {
         $request->validate([
-            'name' => 'required',
-            'users' => 'required'
+            'name' => 'required'
         ]);
 
         $task->name = ($request->get('name'));
