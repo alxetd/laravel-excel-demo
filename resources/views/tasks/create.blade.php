@@ -25,7 +25,7 @@
                         <label for="users">Assigned users</label>
                         <select id="users" name="users[]" multiple class="form-control">
                             @foreach ($users as $user)
-                                <option value="{{ $user->id }}" {{ in_array($user->id, $task->users->pluck('id')->toArray()) ? 'selected' : '' }}>{{ $user->name }}</option>
+                                <option value="{{ $user->id }}">{{ $user->name }}</option>
                             @endforeach
                         </select>
                         @error('name')

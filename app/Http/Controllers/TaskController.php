@@ -29,7 +29,9 @@ class TaskController extends Controller
      */
     public function create(): Renderable
     {
-        return view('tasks.create');
+        $users = User::all();
+
+        return view('tasks.create', compact('users'));
     }
 
     /**
@@ -44,10 +46,12 @@ class TaskController extends Controller
             'name' => 'required',
         ]);
 
-        Task::create([
-            'name' => $request->get('name'),
-            'users' => $request->get('users')
+        $task = Task::create([
+            'name' => $request->get('name')
         ]);
+
+        $task->users()->sync($request->get('users'));
+        $task->save();
 
         return redirect()->route('tasks.index')
             ->with('success', 'Task created successfully.');
