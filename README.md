@@ -25,3 +25,13 @@ php artisan make:model Project -mcr
 php artisan make:model Task -mcr
 php artisan make:model Role -mcr
 ```
+
+Add Packages
+```bash
+composer require maatwebsite/excel
+```
+
+```bash
+composer require laravel/ui
+php artisan ui bootstrap
+```
